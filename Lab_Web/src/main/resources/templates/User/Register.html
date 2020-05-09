@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>实验室设备管理系统注册</title>
+    <link rel="Shortcut Icon" href="icos/lab.ico" type="image/x-icon" />
+    <!-- Bootstrap core CSS -->
+    <!--<link href="/asserts/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="/asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.4.1-1/css/bootstrap.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/asserts/css/signin.css" rel="stylesheet">
+    <style>
+        body
+        {
+            background-image: url(/imgs/bgbgbg.jpg);
+            background-size: 100%;
+        }
+    </style>
+</head>
+
+<body class="text-center">
+
+    <form class="form-signin " th:action="@{/addEqu}" th:method="post">
+        <label class="text-center"><h3>注册用户</h3></label>
+
+        <div class="form-group">
+            <label class="form-inline">用户名：</label><input type="text" name="eqname" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="form-inline">密码：</label><input type="text" name="manufacturer" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="form-inline">邮箱：</label><input type="text" name="manufacturer" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="form-inline">手机号：</label><input type="text" name="manufacturer" class="form-control">
+        </div>
+        <button class="btn  btn-primary " type="submit">申 请 注 册</button>
+    </form>
+
+</body>
+
+</html>

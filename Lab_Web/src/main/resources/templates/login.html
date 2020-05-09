@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>实验室设备管理系统登录</title>
+		<link rel="Shortcut Icon" href="icos/lab.ico" type="image/x-icon" />
+		<!-- Bootstrap core CSS -->
+		<!--<link href="/asserts/css/bootstrap.min.css" rel="stylesheet">-->
+		<link href="/asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.4.1-1/css/bootstrap.css}" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="/asserts/css/signin.css" rel="stylesheet">
+		<style>
+			body
+			{
+				background-image: url(/imgs/bgbgbg.jpg);
+				background-size: 100%;
+			}
+		</style>
+	</head>
+
+	<body class="text-center">
+		<form class="form-signin"  th:action="@{/user/login}" th:method="post">
+			<img  src="/imgs/lab.png" alt="" width="72" height="72">
+			<h1 class="h3 mb-3 font-weight-normal">实验室设备管理系统</h1>
+
+			<p style="color: red" th:text="${msg}" ></p>
+
+			<label class="sr-only">Username</label>
+			<input type="text" name="username" class="form-control" placeholder="Username" required="" autofocus="">
+			<label class="sr-only">Password</label>
+			<input type="password" name="password" class="form-control" placeholder="Password" required="">
+			<div class="checkbox mb-3">
+				<label>
+          			<input type="checkbox" value="remember-me"> 记住此账户
+        		</label>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">登 录</button>
+			<a th:href="@{/register}">尚未注册账号？点击注册</a>
+			<p class="mt-5 mb-3 text-muted">© 2020-2021</p>
+
+		</form>
+
+	</body>
+
+</html>

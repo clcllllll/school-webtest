@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.clweb.labweb.mapper.EquipmentMapper">
+    <select id="getEqById" resultType="com.clweb.labweb.entities.Equipment" >
+        select * from equipment where id=#{id}
+    </select>
+    <select id="findAllEquipment" resultType="com.clweb.labweb.entities.Equipment">
+        select * from equipment where status=0
+    </select>
+    <select id="findAllRepairEquipment" resultType="com.clweb.labweb.entities.Equipment">
+        select * from equipment where status=1
+    </select>
+    <select id="findAllScrappedEquipment" resultType="com.clweb.labweb.entities.Equipment">
+        select * from equipment where status=2
+    </select>
+    <select id="findAllLackEquipment" resultType="com.clweb.labweb.entities.Equipment">
+        select * from equipment where status=3
+    </select>
+
+    <update id="MoveToRepair" >
+        update equipment set status=1 where id=#{id}
+    </update>
+    <update id="BackToEquipment">
+        update equipment set status=0 where id=#{id}
+    </update>
+    <update id="DeleteToUnuse" >
+        update equipment set status=2 where id=#{id}
+    </update>
+    <update id="AppleSuccess">
+        update equipment set status=0 where id=#{id}
+    </update>
+    <insert id="insertEquipment">
+        insert into equipment(id,eqmode,eqname,eqsize,eqprice,eqcount,buydate,deaddate,manufacturer,manager,status)
+        values (#{id},#{eqmode},#{eqname},#{eqsize},#{eqprice},#{eqcount},(CURDATE()),#{deaddate},#{manufacturer},#{manager},3)
+    </insert>
+    <update id="updateEquipment">
+        update equipment set eqmode=#{eqmode},eqname=#{eqname},eqsize=#{eqsize},eqprice=#{eqprice},eqcount=#{eqcount},deaddate=#{deaddate},manufacturer=#{manufacturer},manager=#{manager}
+        where id=#{id}
+    </update>
+
+    <select id="findEquipmentId" resultType="com.clweb.labweb.entities.Equipment">
+        select * from equipment where id=#{id}
+    </select>
+    <select id="findEquipmentMode" resultType="com.clweb.labweb.entities.Equipment">
+        select * from equipment where eqmode=#{eqmode}
+    </select>
+    <select id="findEquipmentName" resultType="com.clweb.labweb.entities.Equipment">
+        select * from equipment where eqname=#{eqname}
+    </select>
+    <select id="findEquipmentSize" resultType="com.clweb.labweb.entities.Equipment">
+        select * from equipment where eqsize=#{eqsize}
+    </select>
+</mapper>

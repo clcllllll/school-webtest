@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    username: root
+    password: clcheese
+    url: jdbc:mysql://39.108.194.170:3306/labwebdb?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
